@@ -484,6 +484,16 @@ ul {
     align-items: stretch;
 }
 
+#projects .section-title {
+    display: block;
+    text-align: center;
+}
+
+#projects .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -509,6 +519,7 @@ ul {
     letter-spacing: 0.06em;
     color: var(--navy);
     text-transform: uppercase;
+    text-align: center;
 }
 
 .project-title {
@@ -516,19 +527,23 @@ ul {
     font-weight: 700;
     color: var(--navy);
     line-height: 1.4;
+    text-align: center;
 }
 
 .project-desc {
     font-size: 0.89rem;
     color: var(--text);
     line-height: 1.75;
+    text-align: left;
 }
 
 .project-highlights {
+    list-style: disc;
     padding-left: 19px;
     color: var(--text);
     font-size: 0.84rem;
     line-height: 1.8;
+    text-align: left;
 }
 
 .project-highlights li + li { margin-top: 8px; }
@@ -539,6 +554,7 @@ ul {
     gap: 8px;
     margin-top: auto;
     padding-top: 4px;
+    justify-content: center;
 }
 
 .tag {
@@ -556,6 +572,27 @@ ul {
     flex-wrap: wrap;
     gap: 14px;
     padding-top: 4px;
+    justify-content: center;
+}
+
+/* Share content rows so each pair of cards has matching vertical alignment. */
+@supports (grid-template-rows: subgrid) {
+    .project-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 6;
+        align-items: start;
+        row-gap: 16px;
+    }
+
+    .project-tags {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .project-actions {
+        align-self: end;
+    }
 }
 
 .project-evidence {
@@ -649,6 +686,8 @@ a:focus-visible, button:focus-visible {
 
     .project-card {
         padding: 28px 24px;
+        display: flex;
+        grid-row: auto;
     }
     .hamburger {
         display: flex;
