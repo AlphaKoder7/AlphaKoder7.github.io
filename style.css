@@ -478,19 +478,20 @@ ul {
    PROJECTS
    ============================================================ */
 .project-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-    flex-wrap: wrap;
     align-items: stretch;
 }
 
 .project-card {
     background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--navy);
     border-radius: var(--radius-card);
     padding: 36px 32px;
     box-shadow: var(--shadow);
-    flex: 1;
-    min-width: 280px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -502,47 +503,6 @@ ul {
     box-shadow: var(--shadow-hover);
 }
 
-.project-title {
-    font-size: 1.02rem;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.4;
-}
-
-.projects-intro {
-    max-width: 760px;
-    margin: -20px 0 32px;
-    color: var(--text);
-    line-height: 1.8;
-}
-
-.featured-projects {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.project-featured {
-    min-width: 0;
-    border: 1px solid var(--border);
-    border-top: 4px solid var(--navy);
-}
-
-.project-featured .project-title {
-    font-size: 1.6rem;
-}
-
-.project-featured .project-desc {
-    flex: initial;
-    color: var(--text);
-}
-
-.project-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
 .project-kicker {
     font-size: 0.72rem;
     font-weight: 600;
@@ -551,13 +511,17 @@ ul {
     text-transform: uppercase;
 }
 
-.project-status {
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: #e8f2ed;
-    color: #286045;
-    font-size: 0.72rem;
-    font-weight: 500;
+.project-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+}
+
+.project-desc {
+    font-size: 0.89rem;
+    color: var(--text);
+    line-height: 1.75;
 }
 
 .project-highlights {
@@ -569,19 +533,21 @@ ul {
 
 .project-highlights li + li { margin-top: 8px; }
 
-.project-result {
-    background: var(--bg);
-    padding: 14px 16px;
-    border-radius: 12px;
-    color: var(--navy);
-    font-size: 0.84rem;
-    line-height: 1.75;
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 4px;
 }
 
-.project-scope {
-    font-size: 0.78rem;
-    color: var(--text);
-    line-height: 1.7;
+.tag {
+    padding: 4px 13px;
+    background: rgba(26, 31, 54, 0.07);
+    color: var(--navy);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
 }
 
 .project-actions {
@@ -589,7 +555,6 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     gap: 14px;
-    margin-top: auto;
     padding-top: 4px;
 }
 
@@ -599,12 +564,6 @@ ul {
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
-}
-
-.other-projects-title {
-    margin: 44px 0 24px;
-    color: var(--navy);
-    font-size: 1.15rem;
 }
 
 .sr-only {
@@ -622,28 +581,6 @@ ul {
 a:focus-visible, button:focus-visible {
     outline: 3px solid #5263a8;
     outline-offset: 4px;
-}
-
-.project-desc {
-    font-size: 0.89rem;
-    color: var(--text-muted);
-    line-height: 1.75;
-    flex: 1;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag {
-    padding: 4px 13px;
-    background: rgba(26, 31, 54, 0.07);
-    color: var(--navy);
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 600;
 }
 
 /* ============================================================
@@ -706,11 +643,11 @@ a:focus-visible, button:focus-visible {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
-    .featured-projects {
+    .project-cards {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .project-featured {
+    .project-card {
         padding: 28px 24px;
     }
     .hamburger {
@@ -783,8 +720,7 @@ a:focus-visible, button:focus-visible {
         padding: 72px 0;
     }
 
-    .experience-cards,
-    .project-cards {
+    .experience-cards {
         flex-direction: column;
     }
 

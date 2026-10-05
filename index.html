@@ -121,75 +121,67 @@
     <section class="section" id="projects">
         <div class="section-container">
             <h2 class="section-title">Projects</h2>
-            <p class="projects-intro">Two featured labs covering cloud application delivery and day-to-day Linux fleet operations, with code and validation you can inspect.</p>
-            <div class="project-cards featured-projects">
-                <article class="project-card project-featured" aria-labelledby="devops-lab-title">
-                    <div class="project-heading">
-                        <span class="project-kicker">Featured · Cloud delivery</span>
-                        <span class="project-status">AWS deployment validated</span>
-                    </div>
+            <div class="project-cards">
+                <article class="project-card" aria-labelledby="devops-lab-title">
+                    <span class="project-kicker">Cloud delivery</span>
                     <h3 class="project-title" id="devops-lab-title">DevOps Lab</h3>
-                    <p class="project-desc">An AWS application delivery lab that takes a small FastAPI service from a Git push through testing, container publishing and deployment to K3s with Helm.</p>
+                    <p class="project-desc">An AWS application delivery lab that takes a FastAPI service from a Git push through automated testing, container publishing and deployment to K3s with Helm.</p>
                     <ul class="project-highlights">
-                        <li>Terraform defines the VPC, EC2 platform node and IAM roles.</li>
-                        <li>GitHub Actions tests and publishes commit-tagged images to GHCR, then deploys through AWS Systems Manager using OIDC authentication.</li>
-                        <li>Helm includes readiness checks, Prometheus scraping and alert rules; Grafana dashboard configuration lives in the repository.</li>
+                        <li>Terraform provisions the VPC, EC2 platform node and IAM roles, with management through AWS Systems Manager.</li>
+                        <li>GitHub Actions publishes commit-tagged Docker images to GHCR and deploys with Helm using OIDC authentication.</li>
+                        <li>Prometheus scrape and alert rules plus Grafana dashboard configuration support observability; the recorded test, build and deployment workflow passed.</li>
                     </ul>
-                    <p class="project-result"><strong>Verified:</strong> the recorded workflow passed tests, image publishing and the AWS Helm deployment.</p>
-                    <div class="project-tags">
-                        <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Kubernetes / K3s</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
-                    </div>
+                    <div class="project-tags"><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Kubernetes / K3s</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div>
                     <div class="project-actions">
                         <a href="https://github.com/AlphaKoder7/Devops-Lab" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: DevOps Lab</span></a>
-                        <a href="https://github.com/AlphaKoder7/Devops-Lab/actions/runs/37230635326" class="project-evidence" target="_blank" rel="noopener">Deployment evidence<span class="sr-only"> for DevOps Lab</span> ↗</a>
+                        <a href="https://github.com/AlphaKoder7/Devops-Lab/blob/main/README.md" class="project-evidence" target="_blank" rel="noopener">Documentation<span class="sr-only"> for DevOps Lab</span> ↗</a>
                     </div>
                 </article>
-                <article class="project-card project-featured" aria-labelledby="fleetops-title">
-                    <div class="project-heading">
-                        <span class="project-kicker">Featured · Linux operations</span>
-                        <span class="project-status">Validated on local VMs</span>
-                    </div>
-                    <h3 class="project-title" id="fleetops-title">FleetOps</h3>
-                    <p class="project-desc">Ansible automation for three Ubuntu VMs: one HAProxy load balancer and two application servers. Detects configuration drift, repairs managed state and performs maintenance one node at a time.</p>
+                <article class="project-card" aria-labelledby="phoenix-title">
+                    <span class="project-kicker">Azure validation</span>
+                    <h3 class="project-title" id="phoenix-title">Phoenix Protocol</h3>
+                    <p class="project-desc">An automated Azure SQL validation pipeline that creates a temporary drill environment, copies a source database, checks it with SQL queries and tears the environment down.</p>
                     <ul class="project-highlights">
-                        <li>Repeatable KVM/libvirt provisioning with cloud-init and non-root systemd services.</li>
-                        <li>Health-gated drain, package upgrade, reboot and rejoin; a failed health check stops maintenance before touching the peer.</li>
-                        <li>Read-only drift detection, targeted repair, invalid-config rejection and 25 portable automated tests.</li>
+                        <li>Terraform creates an isolated resource group and SQL server for each drill, with Python orchestration through the Azure SDK.</li>
+                        <li>Database checks count user-defined tables or rows in a selected table, and report a pass or failure against the configured threshold.</li>
+                        <li>GitHub Actions supports weekly and manual drills, authenticates with a Service Principal and attempts cleanup even when earlier steps fail.</li>
                     </ul>
-                    <p class="project-result"><strong>Measured locally:</strong> 678 sampled requests, zero observed failures and 4.74 ms p95 latency during the package-upgrade and reboot exercise.</p>
-                    <p class="project-scope">Local lab results; AWS deployment is a future extension.</p>
-                    <div class="project-tags">
-                        <span class="tag">Ansible</span><span class="tag">Linux</span><span class="tag">Python</span><span class="tag">HAProxy</span><span class="tag">systemd</span><span class="tag">KVM / libvirt</span><span class="tag">cloud-init</span>
+                    <div class="project-tags"><span class="tag">Azure</span><span class="tag">Azure SQL</span><span class="tag">Terraform</span><span class="tag">Python</span><span class="tag">GitHub Actions</span><span class="tag">Azure SDK</span><span class="tag">pyodbc</span></div>
+                    <div class="project-actions">
+                        <a href="https://github.com/AlphaKoder7/Phoenix-Protocol" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: Phoenix Protocol</span></a>
+                        <a href="https://github.com/AlphaKoder7/Phoenix-Protocol/blob/main/README.md" class="project-evidence" target="_blank" rel="noopener">Documentation<span class="sr-only"> for Phoenix Protocol</span> ↗</a>
                     </div>
+                </article>
+                <article class="project-card" aria-labelledby="fleetops-title">
+                    <span class="project-kicker">Linux operations</span>
+                    <h3 class="project-title" id="fleetops-title">FleetOps</h3>
+                    <p class="project-desc">An Ansible operations lab for three local Ubuntu VMs: one HAProxy load balancer and two application servers. Automates configuration, drift recovery and maintenance one node at a time.</p>
+                    <ul class="project-highlights">
+                        <li>KVM/libvirt and cloud-init create a repeatable fleet with non-root systemd services and project-scoped resources.</li>
+                        <li>Health-gated drain, package upgrade, reboot and rejoin stop on failure before modifying the next node; drift checks and targeted repair restore managed state.</li>
+                        <li>25 portable tests and real-VM exercises passed. The local upgrade and reboot run recorded 678 sampled requests with no observed failures and 4.74 ms p95 latency.</li>
+                    </ul>
+                    <div class="project-tags"><span class="tag">Ansible</span><span class="tag">Linux</span><span class="tag">Python</span><span class="tag">HAProxy</span><span class="tag">systemd</span><span class="tag">KVM / libvirt</span><span class="tag">cloud-init</span></div>
                     <div class="project-actions">
                         <a href="https://github.com/AlphaKoder7/FleetOps" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: FleetOps</span></a>
-                        <a href="https://github.com/AlphaKoder7/FleetOps/tree/main/evidence" class="project-evidence" target="_blank" rel="noopener">Test evidence<span class="sr-only"> for FleetOps</span> ↗</a>
+                        <a href="https://github.com/AlphaKoder7/FleetOps/blob/main/README.rst" class="project-evidence" target="_blank" rel="noopener">Documentation<span class="sr-only"> for FleetOps</span> ↗</a>
                     </div>
                 </article>
-            </div>
-            <h3 class="other-projects-title">More projects</h3>
-            <div class="project-cards">
-                <div class="project-card">
-                    <h3 class="project-title">Phoenix Protocol: Automated DR Validation Pipeline</h3>
-                    <p class="project-desc">Automated disaster recovery validation pipeline on Microsoft Azure. Provisions and destroys ephemeral Azure SQL infrastructure per drill run using Terraform, Python orchestration with Service Principal auth, and weekly GitHub Actions cron with guaranteed cleanup. Costs under $0.05 per run with zero idle cost.</p>
-                    <div class="project-tags">
-                        <span class="tag">Terraform</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">GitHub Actions</span>
+                <article class="project-card" aria-labelledby="simulation-title">
+                    <span class="project-kicker">API &amp; observability</span>
+                    <h3 class="project-title" id="simulation-title">Simulation Job Queue API</h3>
+                    <p class="project-desc">A containerised FastAPI service that simulates computational job processing, with validated requests, background job lifecycle transitions and application metrics for Prometheus and Grafana.</p>
+                    <ul class="project-highlights">
+                        <li>Submit jobs with unique IDs, list jobs and inspect their status as background tasks move them from pending to running to completed.</li>
+                        <li>Docker Compose runs the API, Prometheus and Grafana together; health, metrics and interactive API documentation endpoints support inspection.</li>
+                        <li>Pydantic validates API data, while pytest and GitHub Actions check the application and Docker build. Job state is stored in memory.</li>
+                    </ul>
+                    <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">Pydantic</span><span class="tag">Docker Compose</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">pytest</span><span class="tag">GitHub Actions</span></div>
+                    <div class="project-actions">
+                        <a href="https://github.com/AlphaKoder7/Simulation-job-Queue" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: Simulation Job Queue API</span></a>
+                        <a href="https://github.com/AlphaKoder7/Simulation-job-Queue/blob/master/README.md" class="project-evidence" target="_blank" rel="noopener">Documentation<span class="sr-only"> for Simulation Job Queue API</span> ↗</a>
                     </div>
-                    <a href="https://github.com/AlphaKoder7/Phoenix-Protocol" class="btn btn-outline btn-sm" target="_blank" rel="noopener">View on GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3 class="project-title">Simulation Job Queue API</h3>
-                    <p class="project-desc">RESTful API for job lifecycle management, built with FastAPI and Pydantic validation and containerised with Docker and Docker Compose.</p>
-                    <div class="project-tags">
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Docker</span>
-                    </div>
-                    <a href="https://github.com/AlphaKoder7/Simulation-job-Queue" class="btn btn-outline btn-sm" target="_blank" rel="noopener">View on GitHub</a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
