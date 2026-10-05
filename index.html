@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abin Issac — SRE, DevOps, and Platform Engineering. Azure, Terraform, Python, GitHub Actions. M.Sc. Computer Applications, 2026.">
+    <meta name="description" content="Abin Issac — DevOps, SRE and platform engineering portfolio. AWS delivery automation with DevOps Lab and Ansible Linux fleet operations with FleetOps.">
     <meta property="og:title" content="Abin Issac — Platform Engineer | DevOps | SRE">
-    <meta property="og:description" content="Portfolio of Abin Issac. Cloud infrastructure and automation on Azure with Terraform, Python, and GitHub Actions. Projects include an automated DR validation pipeline.">
+    <meta property="og:description" content="Explore DevOps Lab: AWS, Terraform, Kubernetes and CI/CD. FleetOps: Ansible, rolling Linux maintenance and measured recovery exercises.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alphakoder7.github.io/">
-    <meta property="og:image" content="https://alphakoder7.github.io/assets/profile.jpg">
+    <meta property="og:image" content="https://alphakoder7.github.io/assets/Abin.jpeg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Abin Issac — Platform Engineer | DevOps | SRE">
-    <meta name="twitter:description" content="Cloud infrastructure and automation on Azure with Terraform, Python, and GitHub Actions.">
-    <meta name="twitter:image" content="https://alphakoder7.github.io/assets/profile.jpg">
+    <meta name="twitter:description" content="AWS application delivery and Ansible Linux fleet operations. Explore DevOps Lab and FleetOps.">
+    <meta name="twitter:image" content="https://alphakoder7.github.io/assets/Abin.jpeg">
     <title>Abin Issac — Platform Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,10 +47,11 @@
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Abin Issac</h1>
                 <p class="hero-subtitle">Platform Engineer | DevOps | SRE</p>
+                <p class="hero-summary">I build cloud delivery pipelines and automate Linux operations. Explore my AWS deployment lab and tested Ansible fleet.</p>
                 <div class="hero-cta">
                 <div class="hero-buttons">
                     <a href="assets/Abin_Issac_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">View CV</a>
-                    <a href="#contact" class="btn btn-solid">Contact Info</a>
+                    <a href="#projects" class="btn btn-solid">Explore Projects</a>
                 </div>
                 <div class="hero-socials">
                     <a href="https://www.linkedin.com/in/abin-issac-cloud" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -74,7 +75,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <p class="about-bio">
-                    I'm a recent M.Sc. Computer Applications candidate (SICSR Pune, 2026) focused on cloud infrastructure and automation. I built Phoenix Protocol, an automated disaster recovery validation pipeline on Azure using Terraform, Python, and GitHub Actions, and I enjoy turning manual, error prone operations into reliable automated systems. Currently pursuing AZ-104 and working toward a career in SRE and platform engineering.
+                    I've completed my M.Sc. Computer Applications studies at SICSR Pune (2026) and am available for DevOps, SRE and cloud infrastructure opportunities. My projects cover application delivery on AWS, Linux configuration and maintenance with Ansible, and Azure SQL validation automation. I focus on repeatable infrastructure, observable deployments and recovery that can be tested.
                 </p>
                 <div class="stat-cards">
                     <div class="stat-card">
@@ -85,7 +86,7 @@
                     <div class="stat-card">
                         <span class="stat-label">Focus</span>
                         <span class="stat-value">Platform Engineer | DevOps | SRE</span>
-                        <span class="stat-sub">Azure | Terraform | Python | GitHub Actions | Docker | Linux</span>
+                        <span class="stat-sub">AWS &amp; Azure · Terraform · Ansible · Kubernetes · Python · Linux</span>
                     </div>
                 </div>
             </div>
@@ -120,6 +121,53 @@
     <section class="section" id="projects">
         <div class="section-container">
             <h2 class="section-title">Projects</h2>
+            <p class="projects-intro">Two featured labs covering cloud application delivery and day-to-day Linux fleet operations, with code and validation you can inspect.</p>
+            <div class="project-cards featured-projects">
+                <article class="project-card project-featured" aria-labelledby="devops-lab-title">
+                    <div class="project-heading">
+                        <span class="project-kicker">Featured · Cloud delivery</span>
+                        <span class="project-status">AWS deployment validated</span>
+                    </div>
+                    <h3 class="project-title" id="devops-lab-title">DevOps Lab</h3>
+                    <p class="project-desc">An AWS application delivery lab that takes a small FastAPI service from a Git push through testing, container publishing and deployment to K3s with Helm.</p>
+                    <ul class="project-highlights">
+                        <li>Terraform defines the VPC, EC2 platform node and IAM roles.</li>
+                        <li>GitHub Actions tests and publishes commit-tagged images to GHCR, then deploys through AWS Systems Manager using OIDC authentication.</li>
+                        <li>Helm includes readiness checks, Prometheus scraping and alert rules; Grafana dashboard configuration lives in the repository.</li>
+                    </ul>
+                    <p class="project-result"><strong>Verified:</strong> the recorded workflow passed tests, image publishing and the AWS Helm deployment.</p>
+                    <div class="project-tags">
+                        <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Kubernetes / K3s</span><span class="tag">Helm</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/AlphaKoder7/Devops-Lab" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: DevOps Lab</span></a>
+                        <a href="https://github.com/AlphaKoder7/Devops-Lab/actions/runs/37230635326" class="project-evidence" target="_blank" rel="noopener">Deployment evidence<span class="sr-only"> for DevOps Lab</span> ↗</a>
+                    </div>
+                </article>
+                <article class="project-card project-featured" aria-labelledby="fleetops-title">
+                    <div class="project-heading">
+                        <span class="project-kicker">Featured · Linux operations</span>
+                        <span class="project-status">Validated on local VMs</span>
+                    </div>
+                    <h3 class="project-title" id="fleetops-title">FleetOps</h3>
+                    <p class="project-desc">Ansible automation for three Ubuntu VMs: one HAProxy load balancer and two application servers. Detects configuration drift, repairs managed state and performs maintenance one node at a time.</p>
+                    <ul class="project-highlights">
+                        <li>Repeatable KVM/libvirt provisioning with cloud-init and non-root systemd services.</li>
+                        <li>Health-gated drain, package upgrade, reboot and rejoin; a failed health check stops maintenance before touching the peer.</li>
+                        <li>Read-only drift detection, targeted repair, invalid-config rejection and 25 portable automated tests.</li>
+                    </ul>
+                    <p class="project-result"><strong>Measured locally:</strong> 678 sampled requests, zero observed failures and 4.74 ms p95 latency during the package-upgrade and reboot exercise.</p>
+                    <p class="project-scope">Local lab results; AWS deployment is a future extension.</p>
+                    <div class="project-tags">
+                        <span class="tag">Ansible</span><span class="tag">Linux</span><span class="tag">Python</span><span class="tag">HAProxy</span><span class="tag">systemd</span><span class="tag">KVM / libvirt</span><span class="tag">cloud-init</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/AlphaKoder7/FleetOps" class="btn btn-solid btn-sm" target="_blank" rel="noopener">View Repository<span class="sr-only">: FleetOps</span></a>
+                        <a href="https://github.com/AlphaKoder7/FleetOps/tree/main/evidence" class="project-evidence" target="_blank" rel="noopener">Test evidence<span class="sr-only"> for FleetOps</span> ↗</a>
+                    </div>
+                </article>
+            </div>
+            <h3 class="other-projects-title">More projects</h3>
             <div class="project-cards">
                 <div class="project-card">
                     <h3 class="project-title">Phoenix Protocol: Automated DR Validation Pipeline</h3>
@@ -134,7 +182,7 @@
                 </div>
                 <div class="project-card">
                     <h3 class="project-title">Simulation Job Queue API</h3>
-                    <p class="project-desc">RESTful API built with FastAPI and Pydantic validation, containerised with Docker and Docker Compose, designed for high throughput job lifecycle management.</p>
+                    <p class="project-desc">RESTful API for job lifecycle management, built with FastAPI and Pydantic validation and containerised with Docker and Docker Compose.</p>
                     <div class="project-tags">
                         <span class="tag">FastAPI</span>
                         <span class="tag">Python</span>
